@@ -9,6 +9,8 @@ import { H5pImage } from "./models/h5p-image";
 export class DialogCardsCreator extends ContentCreator<H5PDialogCardsContent> {
   constructor(
     h5pPackage: H5pPackage,
+    private title: string,
+    private description: string,  
     private data: Array<{
       front: string;
       back: string;
@@ -26,7 +28,7 @@ export class DialogCardsCreator extends ContentCreator<H5PDialogCardsContent> {
    * @param description
    */
   public setTitle(title: string) {
-    this.h5pPackage.h5pMetadata.title = title;
+    this.h5pPackage.h5pMetadata.title = this.title;
     this.h5pPackage.addMetadata(this.h5pPackage.h5pMetadata);
   }
 
@@ -105,6 +107,8 @@ export class DialogCardsCreator extends ContentCreator<H5PDialogCardsContent> {
       }
       contentObject.dialogs.push(card);
     }
+    contentObject.title = this.title;
+    contentObject.description = this.description;
     contentObject.mode = this.mode;
   }
 

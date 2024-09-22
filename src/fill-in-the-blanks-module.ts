@@ -1,5 +1,4 @@
 import * as fs from "fs";
-import * as papa from "papaparse";
 import * as path from "path";
 import * as yargs from "yargs";
 
@@ -9,68 +8,55 @@ import { H5pPackage } from "./h5p-package";
 export class FillInTheBlanksModule implements yargs.CommandModule {
 	public command = "fill-in-the-blanks <input> <output>";
 	public describe =
-		"Converts csv input to h5p fill-in-the-blanks content. The headings for the columns \
-                     should be: text, question1, question2, ...";
+		"Converts JSON input to H5P fill-in-the-blanks content.";
 	public builder = (y: yargs.Argv) =>
 		y
-			.positional("input", { describe: "csv input file" })
+			.positional("input", { describe: "JSON input file" })
 			.positional("output", {
-				describe: "h5p output file including .h5p extension",
+				describe: "H5P output file including .h5p extension",
 			})
 			.option("l", {
-				describe: "language for translations in h5p content",
+				describe: "language for translations in H5P content",
 				default: "en",
 				type: "string",
 			})
-			.option("d", { describe: "CSV delimiter", default: "", type: "string" })
-			.option("e", { describe: "encoding", default: "UTF-8", type: "string" })
-			.option("t", {
-				describe: "title of the content",
-				default: "Fill in the blanks",
-				type: "string",
-			})
-			.option("des", {
-				describe: "description of the content",
-				default: "Fill in the blanks.",
-				type: "string",
-			});
+			.option("e", { describe: "encoding", default: "UTF-8", type: "string" });
 
 	public handler = async (argv) => {
 		await this.runFillInTheBlanks(
 			argv.input,
 			argv.output,
-			argv.t,
 			argv.e,
-			argv.d,
-			argv.l,
-			argv.description
+			argv.l
 		);
 	};
 
 	private async runFillInTheBlanks(
-		csvfile: string,
+		jsonfile: string,
 		outputfile: string,
-		title: string,
 		encoding: BufferEncoding,
-		delimiter: string,
-		language: string,
-		description: string
+		language: string
 	) {
-		let csv = fs.readFileSync(csvfile, { encoding });
-		const data = papa.parse(csv, {
-			header: true,
-			delimiter: delimiter,
-			skipEmptyLines: true,
-		});
-		let h5pPackage = await H5pPackage.createFromHub("H5P.Blanks", language);
+		// Read the JSON file
+		const jsonData = JSON.parse(fs.readFileSync(jsonfile, { encoding }));
+
+		// Extract the required fields from JSON
+		const { title, description, questions } = jsonData;
+
+		// Create an H5P package
+		const h5pPackage = await H5pPackage.createFromHub("H5P.Blanks", language);
+
+		// Create the FillInTheBlanks content
 		const creator = new FillInTheBlanksCreator(
 			h5pPackage,
-			data.data as any,
+			questions, // assuming questions is an array in the JSON
 			title,
 			description,
-			path.dirname(csvfile)
+			path.dirname(jsonfile)
 		);
+
+		// Create and save the package
 		await creator.create();
-		creator.savePackage(outputfile);
+		await creator.savePackage(outputfile);
 	}
 }

@@ -1,18 +1,19 @@
 import * as fs from "fs";
+import * as papa from "papaparse";
 import * as yargs from "yargs";
 import * as path from "path";
 
-import { DialogCardsCreator } from "./dialogcards-creator";
+import { ImagePairCreator } from "./imagepair-creator";
 import { H5pPackage } from "./h5p-package";
 
 /**
  * This is the yargs module for dialogcards.
  */
-export class DialogCardsModule implements yargs.CommandModule {
-  public command = "dialogcards <input> <output>";
+export class ImagePairModule implements yargs.CommandModule {
+  public command = "imagepair <input> <output>";
   public describe =
-    "Converts csv input to h5p dialog cards content. The headings for the columns \
-                     should be: front, back, [image] (image is the URL of an image to include)";
+    "Converts csv input to h5p image pair content. The headings for the columns \
+                     should be: image, alt_text, [match], [matchAlt]";
   public builder = (y: yargs.Argv) =>
     y
       .positional("input", { describe: "csv input file" })
@@ -24,40 +25,54 @@ export class DialogCardsModule implements yargs.CommandModule {
         default: "en",
         type: "string",
       })
+      .option("d", { describe: "CSV delimiter", default: ";", type: "string" })
       .option("e", { describe: "encoding", default: "UTF-8", type: "string" })
+      .option("n", {
+        describe: "name/title of the content",
+        default: "Match letter and object",
+        type: "string",
+      });
 
   public handler = async (argv) => {
-    await this.runDialogcards(
+    await this.runImagePair(
       argv.input,
       argv.output,
+      argv.n,
       argv.e,
+      argv.d,
       argv.l,
+      argv.tags,
     );
   };
 
-  private async runDialogcards(
-    jsonfile: string,
+  private async runImagePair(
+    csvfile: string,
     outputfile: string,
+    title: string,
     encoding: BufferEncoding,
+    delimiter: string,
     language: string,
-  ): Promise<void> {
+    tags: string,
+    ): Promise<void> {
     console.log("Creating module content type.");
-    jsonfile = jsonfile.trim();
+    csvfile = csvfile.trim();
     outputfile = outputfile.trim();
 
-    let jsonData = JSON.parse(fs.readFileSync(jsonfile, encoding ));
-    let { title, description, mode, data } = jsonData;
+    let csv = fs.readFileSync(csvfile, { encoding });
+    let csvParsed = papa.parse(csv, {
+      header: true,
+      delimiter,
+      skipEmptyLines: true,
+    });
     let h5pPackage = await H5pPackage.createFromHub(
-      "H5P.DialogCards",
+      "H5p.ImagePair",
       language
     );
-    let creator = new DialogCardsCreator(
+    let creator = new ImagePairCreator(
       h5pPackage,
-      title,
-      description,
-      data,
-      mode,
-      path.dirname(jsonfile)
+      csvParsed.data as any,
+      path.dirname(csvfile),
+
     );
     await creator.create();
     creator.setTitle(title);

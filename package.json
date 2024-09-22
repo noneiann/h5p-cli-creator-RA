@@ -1,12 +1,17 @@
 {
   "name": "h5p-cli-creator",
-  "version": "0.4.0",
+  "version": "1.0",
   "description": "Mass creates h5p packages from content files",
+  "main": "dist/index.js",
+  "bin": {
+    "h5p-cli-creator": "./dist/index.js"
+  },
   "scripts": {
+    "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
   },
-  "author": "Sebastian Rettig",
+  "author": "Rey Iann V. Tigley",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.25.0",

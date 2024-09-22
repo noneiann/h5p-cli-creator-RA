@@ -1,0 +1,24 @@
+{
+    "title": "Drag and Drop Exercise",
+    "description": "Drag and drop the items into the correct categories.",
+    "items": [
+        {
+            "label": "Fruits",
+            "correctDraggables": [
+                "apple",
+                "mango",
+                "banana"
+            ],
+            "tip": ""
+        },
+        {
+            "label": "Vegetables",
+            "correctDraggables": [
+                "spinach",
+                "onion",
+                "tomato"
+            ],
+            "tip": ""
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+{
+    "title": "Sample Flashcards",
+    "description": "These flashcards cover a variety of topics for practice.",
+    "flashcards": [
+        {
+            "question": "question 1",
+            "answer": "answer 1",
+            "tip": "#1",
+            "image": "image1.jpg"
+        },
+        {
+            "question": "question 2",
+            "answer": "answer 2",
+            "tip": "#2",
+            "image": "https://cdn.pixabay.com/photo/2022/01/10/18/09/budapest-6928973_960_720.jpg"
+        },
+        {
+            "question": "question 3",
+            "answer": "answer 3",
+            "tip": "#3",
+            "image": ""
+        },
+        {
+            "question": "question 4",
+            "answer": "answer 4",
+            "tip": "#4",
+            "image": ""
+        },
+        {
+            "question": "question 5",
+            "answer": "answer 5",
+            "tip": "#5",
+            "image": ""
+        },
+        {
+            "question": "question 6",
+            "answer": "answer 6",
+            "tip": "#6",
+            "image": ""
+        },
+        {
+            "question": "question 7",
+            "answer": "answer 7",
+            "tip": "#7",
+            "image": ""
+        },
+        {
+            "question": "question 8",
+            "answer": "answer 8",
+            "tip": "#8",
+            "image": ""
+        },
+        {
+            "question": "question 9",
+            "answer": "answer 9",
+            "tip": "#9",
+            "image": ""
+        }
+    ]
+}

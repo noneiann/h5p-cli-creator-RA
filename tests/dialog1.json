@@ -1,0 +1,61 @@
+{
+    "title": "Dialog Cards",
+    "description": "A set of dialog cards for practice.",
+    "mode": "normal",
+    "data": [
+        {
+            "front": "question 1",
+            "back": "answer 1",
+            "image": "https://cdn.pixabay.com/photo/2016/09/27/03/39/overcoming-1697546_960_720.jpg",
+            "audio": null
+        },
+        {
+            "front": "question 2",
+            "back": "answer 2",
+            "image": null,
+            "audio": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3"
+        },
+        {
+            "front": "question 3",
+            "back": "answer 3",
+            "image": null,
+            "audio": "sound.wav"
+        },
+        {
+            "front": "question 4",
+            "back": "answer 4",
+            "image": null,
+            "audio": null
+        },
+        {
+            "front": "question 5",
+            "back": "answer 5",
+            "image": null,
+            "audio": null
+        },
+        {
+            "front": "question 6",
+            "back": "answer 6",
+            "image": null,
+            "audio": null
+        },
+        {
+            "front": "question 7",
+            "back": "answer 7",
+            "image": null,
+            "audio": null
+        },
+        {
+            "front": "question 8",
+            "back": "answer 8",
+            "image": null,
+            "audio": null
+        },
+        {
+            "front": "question 9",
+            "back": "answer 9",
+            "image": null,
+            "audio": null
+        }
+    ]
+}

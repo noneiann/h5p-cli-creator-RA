@@ -1,5 +1,4 @@
 import * as fs from "fs";
-import * as papa from "papaparse";
 import * as path from "path";
 import * as yargs from "yargs";
 
@@ -12,70 +11,44 @@ import { H5pPackage } from "./h5p-package";
 export class FlashcardsModule implements yargs.CommandModule {
   public command = "flashcards <input> <output>";
   public describe =
-    "Converts csv input to h5p flashcard content. The headings for the columns \
-                     should be: question, answer, [tip], [image] (image is the URL of an image to include)";
+    "Converts JSON input to H5P flashcard content. The JSON should be an object with properties: title, description, and flashcards (an array of objects with keys: question, answer, [tip], [image]).";
   public builder = (y: yargs.Argv) =>
     y
-      .positional("input", { describe: "csv input file" })
+      .positional("input", { describe: "JSON input file" })
       .positional("output", {
-        describe: "h5p output file including .h5p extension",
+        describe: "H5P output file including .h5p extension",
       })
       .option("l", {
-        describe: "language for translations in h5p content",
+        describe: "language for translations in H5P content",
         default: "en",
         type: "string",
       })
-      .option("d", { describe: "CSV delimiter", default: ";", type: "string" })
-      .option("e", { describe: "encoding", default: "UTF-8", type: "string" })
-      .option("t", {
-        describe: "title of the content",
-        default: "Flashcards",
-        type: "string",
-      })
-      .option("description", {
-        describe: "description of the content",
-        default: "Write in the answers to the questions.",
-        type: "string",
-      });
+      .option("e", { describe: "encoding", default: "UTF-8", type: "string" });
 
   public handler = async (argv) => {
-    await this.runFlashcards(
-      argv.input,
-      argv.output,
-      argv.t,
-      argv.e,
-      argv.d,
-      argv.l,
-      argv.description
-    );
+    await this.runFlashcards(argv.input, argv.output, argv.e, argv.l);
   };
 
   private async runFlashcards(
-    csvfile: string,
+    jsonfile: string,
     outputfile: string,
-    title: string,
     encoding: BufferEncoding,
-    delimiter: string,
-    language: string,
-    description: string
+    language: string
   ): Promise<void> {
     console.log("Creating flashcards content type.");
-    csvfile = csvfile.trim();
+    jsonfile = jsonfile.trim();
     outputfile = outputfile.trim();
 
-    let csv = fs.readFileSync(csvfile, encoding);
-    let csvParsed = papa.parse(csv, {
-      header: true,
-      delimiter,
-      skipEmptyLines: true,
-    });
+    let jsonData = JSON.parse(fs.readFileSync(jsonfile, encoding));
+    let { title, description, flashcards } = jsonData;
+
     let h5pPackage = await H5pPackage.createFromHub("H5P.Flashcards", language);
     let flashcardsCreator = new FlashcardsCreator(
       h5pPackage,
-      csvParsed.data as any,
+      flashcards,
       description,
       title,
-      path.dirname(csvfile)
+      path.dirname(jsonfile)
     );
     await flashcardsCreator.create();
     flashcardsCreator.savePackage(outputfile);

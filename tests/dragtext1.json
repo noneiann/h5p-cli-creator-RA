@@ -1,0 +1,9 @@
+{
+    "title": "Drag Text",
+    "taskDescription": "hello world",
+    "textField": [
+        "Blueberries are *blue:Check the name of the berry!*.",
+        "Strawberries are *red*.",
+        "Cloudberries are *orange*."
+    ]
+}
