@@ -1,0 +1,64 @@
+{
+    "introduction": {
+        "showIntroPage": true,
+        "introductionImage": {
+            "path": "images/bulgarian-introduction-image.jpg"
+        },
+        "introductionTitle": "Bulgarian to English Translation Test",
+        "introductionText": "<div>Translate the following Bulgarian phrases into English by speaking the correct English translation.</div>\n"
+    },
+    "questions": [
+        {
+            "question": "Здравейте",
+            "acceptedAnswers": [
+                "Hello",
+                "Hi"
+            ],
+            "inputLanguage": "en-US",
+            "title": "Question 1"
+        },
+        {
+            "question": "Как си?",
+            "acceptedAnswers": [
+                "How are you?",
+                "How are you"
+            ],
+            "inputLanguage": "en-US",
+            "title": "Question 2"
+        },
+        {
+            "question": "Добро утро",
+            "acceptedAnswers": [
+                "Good morning"
+            ],
+            "inputLanguage": "en-US",
+            "title": "Question 3"
+        },
+        {
+            "question": "Благодаря",
+            "acceptedAnswers": [
+                "Thank you",
+                "Thanks"
+            ],
+            "inputLanguage": "en-US",
+            "title": "Question 4"
+        }
+    ],
+    "overallFeedback": [
+        {
+            "from": 0,
+            "to": 25,
+            "feedback": "You might want to practice more."
+        },
+        {
+            "from": 26,
+            "to": 75,
+            "feedback": "Good job!"
+        },
+        {
+            "from": 76,
+            "to": 100,
+            "feedback": "Excellent work!"
+        }
+    ]
+}

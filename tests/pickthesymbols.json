@@ -1,0 +1,25 @@
+{
+    "title": "Pick the symbols",
+    "taskDescription": "Select the correct symbols.",
+    "text": "<p>After a great effort, a donkey did not even get enough hay to appease its hunger. Oh, how he wished he could trade places with a magnificent horse. For the donkey had seen that this horse was always fed well and in abundance.<\/p>\n\n<p>But after a few months, the donkey saw the same horse lame and emaciated on a cart. \"Is this magic?\" asked the donkey. \"Almost,\" the horse replied sadly. \"A bullet struck me, and my master fell to the ground with me. In gratitude, he sold me for a mockery. Lame and feeble as I am now, you will surely not want to envy me and trade places with me.\"<\/p>\n",
+    "symbols": ".,?!&quot;",
+    "overallFeedback": [
+        {
+            "from": 0,
+            "to": 50,
+            "feedback": "You need more practice."
+        },
+        {
+            "from": 51,
+            "to": 100,
+            "feedback": "Great job!"
+        }
+    ],
+    "behaviour": {
+        "enableRetry": true,
+        "enableSolutionsButton": false,
+        "infiniteChecking": false,
+        "showAllBlanks": true,
+        "colorBackground": "#FFFFFF"
+    }
+}

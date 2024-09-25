@@ -15,6 +15,12 @@ import { DictationModule } from "./dictation-module";
 import { SingleChoiceSetModule } from "./singlechoiceset-module";
 import { SortParagraphsModule } from "./sortparagraphs-module";
 import { SummaryModule } from "./summary-module";
+import { SpeakTheWordsSetModule } from "./SpeakTheWordsSetModule";
+import { PickTheSymbolsModule } from "./pickthesymbols-module";
+import { MultipleChoiceModule } from "./multichoice-module";
+import { EssayModule } from "./essay-module";
+import { CrosswordModule } from "./crossword-module";
+import { QuestionSetModule } from "./question-set-module";
 
 try {
 	yargs
@@ -23,7 +29,6 @@ try {
 		.command(new FillInTheBlanksModule())
 		.command(new DragTextModule())
 		.command(new FindTheWordsModule())
-		.command(new DragAndDropModule())
 		.command(new ImagePairModule())
 		.command(new MemoryGameModule())
 		.command(new SpeakTheWordsModule())
@@ -32,6 +37,12 @@ try {
 		.command(new SingleChoiceSetModule())
 		.command(new SortParagraphsModule())
 		.command(new SummaryModule())
+		.command(new SpeakTheWordsSetModule())
+		.command(new PickTheSymbolsModule())
+		.command(new MultipleChoiceModule())
+		.command(new EssayModule())
+		.command(new CrosswordModule())
+		.command(new QuestionSetModule())
 		.help().argv;
 } catch (error) {
 	console.error(error);

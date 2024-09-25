@@ -5,5 +5,17 @@
         "four",
         "4"
     ],
-    "inputLanguage": "en-US"
+    "inputLanguage": "en-US",
+    "introduction": {
+        "showIntroPage": true,
+        "introductionImage": {
+            "path": "images\/introductionImage-59c8ee593364e.jpg",
+            "mime": "image\/jpeg",
+            "copyright": {
+                "license": "U"
+            },
+            "width": 770,
+            "height": 542
+        }
+    }
 }

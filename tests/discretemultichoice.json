@@ -1,0 +1,60 @@
+{
+    "title": "Raspberry Colors Quiz",
+    "imagePath": "images/raspberries.jpg",
+    "question": "<p>Ripe red raspberries are best known, but raspberries can have different colors too.</p><p><em>For each of the following options, select whether ripe raspberries can have that color.</em></p>",
+    "answerOptions": [
+        {
+            "correct": true,
+            "text": "<div>Black</div>",
+            "chosenFeedback": "",
+            "notChosenFeedback": "<div>One may confuse them with blackberries, but there are <a href=\"https://www.flickr.com/photos/55620187@N05/19267173329\" target=\"_blank\">black raspberries</a> as well.</div>"
+        },
+        {
+            "correct": true,
+            "text": "<div>Yellow</div>",
+            "chosenFeedback": "",
+            "notChosenFeedback": "<div>There are <a href=\"https://www.flickr.com/photos/8663137@N04/6180874539\" target=\"_blank\">yellow raspberries</a>!</div>"
+        },
+        {
+            "correct": false,
+            "text": "<div>Grey</div>",
+            "chosenFeedback": "<div>Yikes, that would be some ugly berries!</div>",
+            "notChosenFeedback": ""
+        },
+        {
+            "correct": false,
+            "text": "<div>Green</div>",
+            "chosenFeedback": "<div>There are green raspberries, but they are not ripe yet.</div>",
+            "notChosenFeedback": ""
+        },
+        {
+            "correct": false,
+            "text": "<div>Pink</div>",
+            "chosenFeedback": "<div>:-) :-) :-)</div>",
+            "notChosenFeedback": ""
+        },
+        {
+            "correct": false,
+            "text": "<div>White</div>",
+            "chosenFeedback": "<div>Would be beautiful, wouldn't it? But no, there are no white raspberries.</div>",
+            "notChosenFeedback": ""
+        }
+    ],
+    "overallFeedback": [
+        {
+            "from": 0,
+            "to": 50,
+            "feedback": "Oh, oh ..."
+        },
+        {
+            "from": 51,
+            "to": 90,
+            "feedback": "Okay, I'd say."
+        },
+        {
+            "from": 91,
+            "to": 100,
+            "feedback": "Great job!"
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "title": "The Hobbit Essay",
+    "taskDescription": "<h3>Please describe the novel <em>\"The Hobbit\"</em> by J.R.R. Tolkien in at least 100 words.</h3>",
+    "keywords": [
+        {
+            "keyword": "Bilbo",
+            "options": {
+                "points": 10,
+                "occurrences": 3,
+                "caseSensitive": false,
+                "forgiveMistakes": false,
+                "feedbackMissed": "You should mention the main character, Bilbo."
+            }
+        },
+        {
+            "keyword": "Gandalf",
+            "options": {
+                "points": 20,
+                "occurrences": 1,
+                "caseSensitive": false,
+                "forgiveMistakes": true,
+                "feedbackMissed": "Don't forget to mention Gandalf, the wizard."
+            }
+        },
+        {
+            "keyword": "Smaug",
+            "options": {
+                "points": 20,
+                "occurrences": 1,
+                "caseSensitive": false,
+                "forgiveMistakes": false,
+                "feedbackIncluded": "Great job mentioning Smaug, the dragon!"
+            }
+        },
+        {
+            "keyword": "dwarfs",
+            "options": {
+                "points": 10,
+                "occurrences": 1,
+                "caseSensitive": false,
+                "forgiveMistakes": false
+            },
+            "alternatives": [
+                "dwarves"
+            ]
+        },
+        {
+            "keyword": "adventure",
+            "options": {
+                "points": 10,
+                "occurrences": 1,
+                "caseSensitive": false,
+                "forgiveMistakes": false
+            },
+            "alternatives": [
+                "quest",
+                "journey"
+            ]
+        }
+    ],
+    "solution": {
+        "introduction": "<div>Please remember that you were not expected to come up with the exact same solution. It is just a good example.<\/div>",
+        "sample": "<div>The book is about a guy called Bilbo. One day, he gets some unexpected visitors: Gandalf, the wizard and nine dwarfs. Some of them had strange names such as Gloin or Dori.Together, they go on an adventure and try to retrieve a treasure from Smaug, an old dragon. Bilbo somewhat betrays the dwarfs, but still is the hero. Bilbo is a good guy.<\/div>"
+    },
+    "behaviour": {
+        "enableRetry": true,
+        "ignoreScoring": false,
+        "maximumLength": 500,
+        "minimumLength": 100,
+        "percentagePassing": 50,
+        "percentageMastering": 80
+    },
+    "overallFeedback": [
+        {
+            "from": 0,
+            "to": 49,
+            "feedback": "You might want to read the book again."
+        },
+        {
+            "from": 50,
+            "to": 79,
+            "feedback": "Good job! You have a basic understanding of 'The Hobbit'."
+        },
+        {
+            "from": 80,
+            "to": 100,
+            "feedback": "Excellent! You know the book very well."
+        }
+    ]
+}

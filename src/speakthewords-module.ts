@@ -1,13 +1,13 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as yargs from "yargs";
-
 import { SpeakTheWordsCreator } from "./speakthewords-creator";
 import { H5pPackage } from "./h5p-package";
 
 export class SpeakTheWordsModule implements yargs.CommandModule {
 	public command = "speak-the-words <input> <output>";
 	public describe = "Converts JSON input to H5P speak-the-words content.";
+
 	public builder = (y: yargs.Argv) =>
 		y
 			.positional("input", { describe: "JSON input file" })
@@ -35,12 +35,15 @@ export class SpeakTheWordsModule implements yargs.CommandModule {
 		const jsonData = JSON.parse(fs.readFileSync(jsonfile, { encoding }));
 
 		// Destructure the JSON to get title, description, and data
-		const { title, question, acceptedAnswers, inputLanguage } = jsonData;
+		const { title, question, acceptedAnswers, inputLanguage, introduction } =
+			jsonData;
+
 		// Create an H5P package using the SpeakTheWords creator
 		const h5pPackage = await H5pPackage.createFromHub(
 			"H5P.SpeakTheWords",
 			language
 		);
+
 		const creator = new SpeakTheWordsCreator(
 			h5pPackage,
 			title,
@@ -49,6 +52,7 @@ export class SpeakTheWordsModule implements yargs.CommandModule {
 			inputLanguage,
 			path.dirname(jsonfile)
 		);
+
 		await creator.create();
 		await creator.savePackage(outputfile);
 	}

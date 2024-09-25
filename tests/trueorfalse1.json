@@ -1,0 +1,35 @@
+{
+  "title": "Choose the Correct Article",
+  "questions": [
+    {
+      "question": "<p>apple</p>",
+      "correct": false,
+      "imagePath": "images/apple.gif",
+      "altText": "An apple"
+    },
+    {
+      "question": "<p>green apple</p>",
+      "correct": true,
+      "imagePath": "images/green-apple.gif",
+      "altText": "A green apple"
+    },
+    {
+      "question": "<p>burger</p>",
+      "correct": true,
+      "imagePath": "images/burger.jpg",
+      "altText": "A burger"
+    },
+    {
+      "question": "<p>delicious burger</p>",
+      "correct": true,
+      "imagePath": "images/burger.jpg",
+      "altText": "A delicious burger"
+    },
+    {
+      "question": "<p>In-N-Out burger</p>",
+      "correct": false,
+      "imagePath": "images/burger.jpg",
+      "altText": "An In-N-Out burger"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+    "title": "H5P Crossword Puzzle",
+    "taskDescription": "<h2>An H5P crossword</h2><p>Find the correct answers to the following H5P related clues to complete the crossword puzzle!</p>",
+    "words": [
+        {
+            "clue": "Company that provides the H5P core team",
+            "answer": "joubel"
+        },
+        {
+            "clue": "Company name that Oliver Tacke uses to brand his H5P development",
+            "answer": "snordian"
+        },
+        {
+            "clue": "H5P content type that requires students to write down what they listened to",
+            "answer": "dictation"
+        },
+        {
+            "clue": "City where the H5P conference in 2018 took place",
+            "answer": "melbourne"
+        },
+        {
+            "clue": "Learning management system from Australia that included H5P in its core",
+            "answer": "moodle"
+        },
+        {
+            "clue": "\"Create, share and ... interactive HTML5 content in your browser\"",
+            "answer": "reuse"
+        }
+    ],
+    "theme": {
+        "imagePath": "images/background.jpgimages/background.jpg"
+    },
+    "overallFeedback": [
+        {
+            "from": 0,
+            "to": 33,
+            "feedback": ":-( Do you know H5P at all?"
+        },
+        {
+            "from": 34,
+            "to": 90,
+            "feedback": "Fairly well!"
+        },
+        {
+            "from": 91,
+            "to": 100,
+            "feedback": "Great! You seem to like H5P! Or crosswords ..."
+        }
+    ]
+}
