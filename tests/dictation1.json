@@ -1,0 +1,33 @@
+{
+    "title": "English Dictation Practice",
+    "taskDescription": "Listen to the sentences and type what you hear.",
+    "sentences": [
+        {
+            "sample": "audio/sample1.mp3",
+            "sampleAlternative": "audio/sample1_alt.mp3",
+            "text": "The quick brown fox jumps over the lazy dog."
+        },
+        {
+            "sample": "audio/sample2.mp3",
+            "sampleAlternative": "audio/sample2_alt.mp3",
+            "text": "She sells seashells by the seashore."
+        }
+    ],
+    "overallFeedback": [
+        {
+            "from": 0,
+            "to": 50,
+            "feedback": "You can improve! Try again."
+        },
+        {
+            "from": 51,
+            "to": 80,
+            "feedback": "Good job! You're almost there."
+        },
+        {
+            "from": 81,
+            "to": 100,
+            "feedback": "Excellent work! You got it!"
+        }
+    ]
+}

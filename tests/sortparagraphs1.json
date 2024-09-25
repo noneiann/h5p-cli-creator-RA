@@ -1,0 +1,17 @@
+{
+    "title": "Sort the Paragraphs",
+    "taskDescription": "<p>Sort the paragraphs below:</p>\n",
+    "paragraphs": [
+        "<p>First, I wake up at 7:30 am</p>\n",
+        "<p>Next, I get dressed</p>\n",
+        "<p>Then, I have breakfast</p>\n",
+        "<p>Afterward, I brush my teeth</p>\n",
+        "<p>Finally, I go to school</p>\n"
+    ],
+    "overallFeedback": [
+        {
+            "from": 0,
+            "to": 100
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "title": "Single Choice Set Example",
+    "choices": [
+        {
+            "question": "<p>Choose the correct sentence.</p>",
+            "answers": [
+                "<p>They are building a new house at the moment.</p>",
+                "<p>They have built a new house at the moment.</p>",
+                "<p>They have been building a new house at the moment.</p>"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "<p>Choose the correct sentence.</p>",
+            "answers": [
+                "<p>Chris moved to his home town in 2007.</p>",
+                "<p>Chris was moving to his home town in 2007.</p>",
+                "<p>Chris has been moved to his home town in 2007.</p>"
+            ],
+            "correctAnswer": 0
+        }
+    ]
+}

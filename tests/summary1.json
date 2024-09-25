@@ -1,0 +1,59 @@
+{
+    "title": "English Grammar Exercise",
+    "intro": "Choose the grammatically correct sentence:",
+    "summaries": [
+        {
+            "summary": [
+                "<p>She don't like apples.</p>",
+                "<p>She doesn't like apples.</p>",
+                "<p>She isn't like apples.</p>"
+            ],
+            "tip": "Remember the correct usage of negative sentences with 'does'.",
+            "subContentId": "3b2f7b1c-bb97-46f9-b6c6-ead68c733d81"
+        },
+        {
+            "summary": [
+                "<p>I have been knowing her for five years.</p>",
+                "<p>I have known her for five years.</p>",
+                "<p>I knew her since five years.</p>"
+            ],
+            "tip": "Pay attention to the present perfect tense.",
+            "subContentId": "e4d7c95e-4695-4d22-b5e7-1a73bf515f24"
+        },
+        {
+            "summary": [
+                "<p>They has been working all day.</p>",
+                "<p>They have been working all day.</p>",
+                "<p>They are working all day.</p>"
+            ],
+            "tip": "Focus on subject-verb agreement.",
+            "subContentId": "79b1e67b-fbde-4ed2-93a6-9c233b7c564a"
+        },
+        {
+            "summary": [
+                "<p>The car which I bought last year is very fast.</p>",
+                "<p>The car that I bought last year is very fast.</p>",
+                "<p>The car who I bought last year is very fast.</p>"
+            ],
+            "tip": "Think about the correct relative pronoun for objects.",
+            "subContentId": "d93b5651-153e-46e4-9734-8f7456704f75"
+        }
+    ],
+    "overallFeedback": [
+        {
+            "from": 0,
+            "to": 50,
+            "feedback": "You need to practice your grammar! You answered @score out of @total correctly."
+        },
+        {
+            "from": 51,
+            "to": 80,
+            "feedback": "Good work! You answered @score out of @total correctly. Keep improving!"
+        },
+        {
+            "from": 81,
+            "to": 100,
+            "feedback": "Excellent! You answered @score out of @total correctly. Your grammar is on point!"
+        }
+    ]
+}

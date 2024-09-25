@@ -1,0 +1,12 @@
+{
+    "title": "Mark the Words",
+    "taskDescription": "A set of Mark the Words for practice.",
+    "textField": "Hello *World*, this is a *test*. \n One *two* three four five *six* seven eight nine *ten*.",
+    "overallFeedback": [
+        {
+            "from": 0,
+            "to": 100,
+            "feedback": "You got @score of @total points."
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "title": "Speak the Words",
+    "question": "Speak the answer. What is 2 + 2 ?",
+    "acceptedAnswers": [
+        "four",
+        "4"
+    ],
+    "inputLanguage": "en-US"
+}
